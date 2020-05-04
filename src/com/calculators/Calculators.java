@@ -59,6 +59,9 @@ public class Calculators {
 		textField.setBounds(10, 11, 250, 52);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		System.out.println(btnEquals.actionPerformed.answer);
+		
+//		System.out.println(this.answer);
 		
 		// ------- Row 1 ----------------
 //		JButton btnBackSpace = new JButton("\uF0E7");
@@ -137,6 +140,10 @@ public class Calculators {
 		JButton btn7 = new JButton("7");
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (textField.getText() == answer) {
+					textField.setText("");
+				}
+				
 				String enterNumber = textField.getText() + btn7.getText();
 				textField.setText(enterNumber);
 			}
@@ -310,6 +317,7 @@ public class Calculators {
 		JButton btnEquals = new JButton("=");
 		btnEquals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String answer;
 				secondNum = Double.parseDouble(textField.getText());
 				
 				if (operators == "+") {
@@ -331,9 +339,11 @@ public class Calculators {
 				} else if(operators == "%") {
 					result = firstNum % secondNum;
 					answer = String.format("%.2f", result);
-					textField.setText(answer);
+					textField.setText(answer);	
 				}
-			}
+				
+			}			
+	
 		});
 		btnEquals.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnEquals.setBounds(202, 330, 60, 60);
