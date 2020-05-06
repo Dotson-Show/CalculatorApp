@@ -59,7 +59,7 @@ public class Calculators {
 		textField.setBounds(10, 11, 250, 52);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
-		System.out.println(btnEquals.actionPerformed.answer);
+		
 		
 //		System.out.println(this.answer);
 		
@@ -342,7 +342,8 @@ public class Calculators {
 					textField.setText(answer);	
 				}
 				
-			}			
+				
+			}
 	
 		});
 		btnEquals.setFont(new Font("Tahoma", Font.BOLD, 20));
